@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ClsNegCliente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,9 +53,9 @@
       <Project>{3c93de2a-e5a8-47b2-91e3-3d9be950593a}</Project>
       <Name>ClbDatGREENDESERT</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ClbModGREENDESERT\ClbModGREENDESERT.csproj">
-      <Project>{334808be-84f8-48c8-8acd-d88378a3f52d}</Project>
-      <Name>ClbModGREENDESERT</Name>
+    <ProjectReference Include="..\ClbModGreenDesertv2\ClbModGreenDesertv2.csproj">
+      <Project>{7e6eab93-8ff4-45f8-b002-51d3b04bcf30}</Project>
+      <Name>ClbModGreenDesertv2</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

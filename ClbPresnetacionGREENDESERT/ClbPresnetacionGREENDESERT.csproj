@@ -135,9 +135,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClbModGREENDESERT\ClbModGREENDESERT.csproj">
-      <Project>{334808be-84f8-48c8-8acd-d88378a3f52d}</Project>
-      <Name>ClbModGREENDESERT</Name>
+    <ProjectReference Include="..\ClbModGreenDesertv2\ClbModGreenDesertv2.csproj">
+      <Project>{7e6eab93-8ff4-45f8-b002-51d3b04bcf30}</Project>
+      <Name>ClbModGreenDesertv2</Name>
     </ProjectReference>
     <ProjectReference Include="..\ClbNegGREENDESERT\ClbNegGREENDESERT.csproj">
       <Project>{23ba6e76-3565-4a66-9bae-dfc834fe48d8}</Project>

@@ -51,5 +51,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClbModGreenDesertv2\ClbModGreenDesertv2.csproj">
+      <Project>{7e6eab93-8ff4-45f8-b002-51d3b04bcf30}</Project>
+      <Name>ClbModGreenDesertv2</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,15 +7,17 @@ using System.Text;
 
 using System.Threading.Tasks;
 using ClbModGREENDESERT;
+using ClbModGreenDesertv2;
 
 namespace ClbDatGREENDESERT
 {
     public class ClsDatCliente
 
     {
-        
+        private readonly string Error = "ClsDatCliente";
 
-        public IEnumerable<ClsModCliente>Cargar(string strConexion, string strCliente)
+
+        public IEnumerable<ClsModCliente>Cargar(string strConexion)
         {
 
             try
@@ -23,11 +25,7 @@ namespace ClbDatGREENDESERT
                 using (SqlConnection conexion = new SqlConnection(strConexion))
                 {
 
-                    return conexion.QueryFirstOrDefault("[dbo].[spCatEmpresaCargarXalias]", new 
-                    {
-
-                        Cliente = strCliente
-                    },
+                    return conexion.Query<ClsModCliente>("[dbo].[SPCLIENTEcargar]",
                           commandType: System.Data.CommandType.StoredProcedure);
                 }
             }
@@ -38,30 +36,55 @@ namespace ClbDatGREENDESERT
             }
         }
 
-        public int agregar(string strConexion, ClsModCliente objmodcliente)
+        public ClsModCliente agregar(string strConexion, ClsModCliente objmodcliente, out ClsModResultado objModResultado)
         {
-
+            objModResultado = new ClsModResultado();
             try
             {
+                var lstParametros = new DynamicParameters();
+                lstParametros.Add("@no_cliente", objmodcliente.no_cliente);
+                lstParametros.Add("@nombre", objmodcliente.nombre);
+                lstParametros.Add("@apellido", objmodcliente.apellido);
+                lstParametros.Add("@direccion", objmodcliente.direccion);
+                
                 using (SqlConnection conexion = new SqlConnection(strConexion))
                 {
-
-                    return conexion.ExecuteScalar<int>("[dbo].[SPClientesAgregar]", new
-                    {
-
-                        no_cliente = objmodcliente.no_cliente,
-                        nombre = objmodcliente.nombre,
-                        apellido = objmodcliente.apellido,
-                        direccion = objmodcliente.direccion
-                    },
-                          commandType: System.Data.CommandType.StoredProcedure);
+                    objModResultado.Id = conexion.ExecuteScalar<int>("[dbo].[SPClientesAgregar]", lstParametros, commandType: System.Data.CommandType.StoredProcedure);
                 }
             }
             catch (Exception ex)
             {
-                Console.Error.Write(ex);
-                throw;
+                objModResultado.MsgError = $"{Error}-agregar, {ex.Message}";
             }
+
+            return objmodcliente;
         }
+
+        public ClsModCliente Actualizar(string strConexion, ClsModCliente objmodcliente, out ClsModResultado objModResultado)
+        {
+            objModResultado = new ClsModResultado();
+            try
+            {
+                var lstParametros = new DynamicParameters();
+                lstParametros.Add("@no_cliente", objmodcliente.no_cliente);
+                lstParametros.Add("@nombre", objmodcliente.nombre);
+                lstParametros.Add("@apellido", objmodcliente.apellido);
+                lstParametros.Add("@direccion", objmodcliente.direccion);
+
+                using (SqlConnection conexion = new SqlConnection(strConexion))
+                {
+                    objModResultado.Id = conexion.ExecuteScalar<int>("[dbo].[SPClientesActualizar]", lstParametros, commandType: System.Data.CommandType.StoredProcedure);
+                }
+            }
+            catch (Exception ex)
+            {
+                objModResultado.MsgError = $"{Error}-Actualizar, {ex.Message}";
+            }
+
+            return objmodcliente;
+        }
+
+       
     }
+
 }

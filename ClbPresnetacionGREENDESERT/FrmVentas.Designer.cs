@@ -29,13 +29,21 @@ namespace ClbPresnetacionGREENDESERT
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.txtEmpleado = new System.Windows.Forms.TextBox();
+            this.txtid = new System.Windows.Forms.TextBox();
+            this.txtproduc = new System.Windows.Forms.TextBox();
+            this.dgvVentas = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnActulizar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
@@ -43,10 +51,6 @@ namespace ClbPresnetacionGREENDESERT
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnNuevo = new FontAwesome.Sharp.IconButton();
             this.btnSave = new FontAwesome.Sharp.IconButton();
-            this.cbxProductos = new System.Windows.Forms.ComboBox();
-            this.cbxEmpleado = new System.Windows.Forms.ComboBox();
-            this.txtCliente = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.panel2.SuspendLayout();
@@ -55,22 +59,86 @@ namespace ClbPresnetacionGREENDESERT
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panel3.Controls.Add(this.dateTimePicker1);
             this.panel3.Controls.Add(this.txtCliente);
-            this.panel3.Controls.Add(this.cbxEmpleado);
-            this.panel3.Controls.Add(this.cbxProductos);
+            this.panel3.Controls.Add(this.txtEmpleado);
+            this.panel3.Controls.Add(this.txtid);
+            this.panel3.Controls.Add(this.txtproduc);
+            this.panel3.Controls.Add(this.dgvVentas);
+            this.panel3.Controls.Add(this.dateTimePicker1);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.dgvVentas);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 62);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(886, 414);
             this.panel3.TabIndex = 4;
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Location = new System.Drawing.Point(158, 97);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(100, 20);
+            this.txtCliente.TabIndex = 6;
+            // 
+            // txtEmpleado
+            // 
+            this.txtEmpleado.Location = new System.Drawing.Point(158, 76);
+            this.txtEmpleado.Name = "txtEmpleado";
+            this.txtEmpleado.Size = new System.Drawing.Size(100, 20);
+            this.txtEmpleado.TabIndex = 6;
+            // 
+            // txtid
+            // 
+            this.txtid.Location = new System.Drawing.Point(158, 24);
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(100, 20);
+            this.txtid.TabIndex = 6;
+            // 
+            // txtproduc
+            // 
+            this.txtproduc.Location = new System.Drawing.Point(158, 50);
+            this.txtproduc.Name = "txtproduc";
+            this.txtproduc.Size = new System.Drawing.Size(100, 20);
+            this.txtproduc.TabIndex = 6;
+            // 
+            // dgvVentas
+            // 
+            this.dgvVentas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvVentas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVentas.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvVentas.GridColor = System.Drawing.Color.Silver;
+            this.dgvVentas.Location = new System.Drawing.Point(320, 19);
+            this.dgvVentas.Name = "dgvVentas";
+            this.dgvVentas.Size = new System.Drawing.Size(563, 190);
+            this.dgvVentas.TabIndex = 5;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(109, 133);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 4;
             // 
             // label6
             // 
@@ -116,6 +184,17 @@ namespace ClbPresnetacionGREENDESERT
             this.label3.TabIndex = 0;
             this.label3.Text = "label1";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(44, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(25, 21);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "id";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -126,15 +205,6 @@ namespace ClbPresnetacionGREENDESERT
             this.label2.Size = new System.Drawing.Size(90, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "Empleado";
-            // 
-            // dgvVentas
-            // 
-            this.dgvVentas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVentas.Location = new System.Drawing.Point(311, 6);
-            this.dgvVentas.Name = "dgvVentas";
-            this.dgvVentas.Size = new System.Drawing.Size(563, 190);
-            this.dgvVentas.TabIndex = 1;
             // 
             // label1
             // 
@@ -184,6 +254,7 @@ namespace ClbPresnetacionGREENDESERT
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // iconButton2
             // 
@@ -235,6 +306,7 @@ namespace ClbPresnetacionGREENDESERT
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnSave
             // 
@@ -253,36 +325,7 @@ namespace ClbPresnetacionGREENDESERT
             this.btnSave.Text = "Guardar";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = false;
-            // 
-            // cbxProductos
-            // 
-            this.cbxProductos.FormattingEnabled = true;
-            this.cbxProductos.Location = new System.Drawing.Point(151, 49);
-            this.cbxProductos.Name = "cbxProductos";
-            this.cbxProductos.Size = new System.Drawing.Size(121, 21);
-            this.cbxProductos.TabIndex = 2;
-            // 
-            // cbxEmpleado
-            // 
-            this.cbxEmpleado.FormattingEnabled = true;
-            this.cbxEmpleado.Location = new System.Drawing.Point(151, 79);
-            this.cbxEmpleado.Name = "cbxEmpleado";
-            this.cbxEmpleado.Size = new System.Drawing.Size(121, 21);
-            this.cbxEmpleado.TabIndex = 2;
-            // 
-            // txtCliente
-            // 
-            this.txtCliente.Location = new System.Drawing.Point(151, 107);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(121, 20);
-            this.txtCliente.TabIndex = 3;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(109, 133);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FrmVentas
             // 
@@ -309,7 +352,6 @@ namespace ClbPresnetacionGREENDESERT
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvVentas;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnActulizar;
         private FontAwesome.Sharp.IconButton btnEditar;
@@ -318,8 +360,11 @@ namespace ClbPresnetacionGREENDESERT
         private FontAwesome.Sharp.IconButton btnNuevo;
         private FontAwesome.Sharp.IconButton btnSave;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridView dgvVentas;
         private System.Windows.Forms.TextBox txtCliente;
-        private System.Windows.Forms.ComboBox cbxEmpleado;
-        private System.Windows.Forms.ComboBox cbxProductos;
+        private System.Windows.Forms.TextBox txtEmpleado;
+        private System.Windows.Forms.TextBox txtid;
+        private System.Windows.Forms.TextBox txtproduc;
+        private System.Windows.Forms.Label label7;
     }
 }

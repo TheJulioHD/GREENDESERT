@@ -29,6 +29,8 @@ namespace ClbPresnetacionGREENDESERT
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnActulizar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
@@ -36,20 +38,22 @@ namespace ClbPresnetacionGREENDESERT
             this.btnNuevo = new FontAwesome.Sharp.IconButton();
             this.btnSave = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.dgvProducto = new System.Windows.Forms.DataGridView();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtiD = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtMarca = new System.Windows.Forms.TextBox();
-            this.cbxProveedor = new System.Windows.Forms.ComboBox();
+            this.txtIDprov = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -103,6 +107,7 @@ namespace ClbPresnetacionGREENDESERT
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // iconButton2
             // 
@@ -140,6 +145,7 @@ namespace ClbPresnetacionGREENDESERT
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnSave
             // 
@@ -158,26 +164,84 @@ namespace ClbPresnetacionGREENDESERT
             this.btnSave.Text = "Guardar";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panel3.Controls.Add(this.cbxProveedor);
+            this.panel3.Controls.Add(this.dgvProducto);
+            this.panel3.Controls.Add(this.txtIDprov);
             this.panel3.Controls.Add(this.txtMarca);
             this.panel3.Controls.Add(this.txtNombre);
+            this.panel3.Controls.Add(this.txtiD);
             this.panel3.Controls.Add(this.txtCodigo);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.dgvProductos);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 62);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(905, 424);
             this.panel3.TabIndex = 2;
+            // 
+            // dgvProducto
+            // 
+            this.dgvProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProducto.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProducto.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvProducto.GridColor = System.Drawing.Color.Silver;
+            this.dgvProducto.Location = new System.Drawing.Point(330, 6);
+            this.dgvProducto.Name = "dgvProducto";
+            this.dgvProducto.Size = new System.Drawing.Size(563, 190);
+            this.dgvProducto.TabIndex = 4;
+            // 
+            // txtMarca
+            // 
+            this.txtMarca.Location = new System.Drawing.Point(151, 105);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(100, 20);
+            this.txtMarca.TabIndex = 2;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(151, 76);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 2;
+            // 
+            // txtiD
+            // 
+            this.txtiD.Location = new System.Drawing.Point(151, 24);
+            this.txtiD.Name = "txtiD";
+            this.txtiD.Size = new System.Drawing.Size(100, 20);
+            this.txtiD.TabIndex = 2;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(151, 50);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.TabIndex = 2;
             // 
             // label6
             // 
@@ -223,6 +287,17 @@ namespace ClbPresnetacionGREENDESERT
             this.label3.TabIndex = 0;
             this.label3.Text = "label1";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(44, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(25, 21);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "ID";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -233,15 +308,6 @@ namespace ClbPresnetacionGREENDESERT
             this.label2.Size = new System.Drawing.Size(74, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "Nombre";
-            // 
-            // dgvProductos
-            // 
-            this.dgvProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(330, 6);
-            this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(563, 190);
-            this.dgvProductos.TabIndex = 1;
             // 
             // label1
             // 
@@ -254,34 +320,12 @@ namespace ClbPresnetacionGREENDESERT
             this.label1.TabIndex = 0;
             this.label1.Text = "Codigo";
             // 
-            // txtCodigo
+            // txtIDprov
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(151, 50);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigo.TabIndex = 2;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(151, 76);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 2;
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.Location = new System.Drawing.Point(151, 105);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(100, 20);
-            this.txtMarca.TabIndex = 2;
-            // 
-            // cbxProveedor
-            // 
-            this.cbxProveedor.FormattingEnabled = true;
-            this.cbxProveedor.Location = new System.Drawing.Point(151, 130);
-            this.cbxProveedor.Name = "cbxProveedor";
-            this.cbxProveedor.Size = new System.Drawing.Size(121, 21);
-            this.cbxProveedor.TabIndex = 3;
+            this.txtIDprov.Location = new System.Drawing.Point(151, 134);
+            this.txtIDprov.Name = "txtIDprov";
+            this.txtIDprov.Size = new System.Drawing.Size(100, 20);
+            this.txtIDprov.TabIndex = 2;
             // 
             // FrmProductos
             // 
@@ -295,7 +339,7 @@ namespace ClbPresnetacionGREENDESERT
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -309,15 +353,17 @@ namespace ClbPresnetacionGREENDESERT
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnActulizar;
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton btnNuevo;
-        private System.Windows.Forms.ComboBox cbxProveedor;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.DataGridView dgvProducto;
+        private System.Windows.Forms.TextBox txtiD;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtIDprov;
     }
 }

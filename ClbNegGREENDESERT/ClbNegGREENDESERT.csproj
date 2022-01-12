@@ -45,6 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ClsNegEmpleados.cs" />
+    <Compile Include="ClsNegVentas.cs" />
+    <Compile Include="ClsNegProveedores.cs" />
+    <Compile Include="ClsNegProductos.cs" />
     <Compile Include="ClsNegCliente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

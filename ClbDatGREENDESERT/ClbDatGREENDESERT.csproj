@@ -45,6 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ClsDatEmpleado.cs" />
+    <Compile Include="ClsDatVentas.cs" />
+    <Compile Include="ClsDatProveedor.cs" />
+    <Compile Include="ClsDatProducto.cs" />
     <Compile Include="ClsDatCliente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

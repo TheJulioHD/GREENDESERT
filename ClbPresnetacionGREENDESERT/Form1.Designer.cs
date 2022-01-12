@@ -31,7 +31,6 @@ namespace ClbPresnetacionGREENDESERT
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.btnEmpleado = new FontAwesome.Sharp.IconButton();
             this.btnProveedores = new FontAwesome.Sharp.IconButton();
             this.btnClientes = new FontAwesome.Sharp.IconButton();
@@ -60,7 +59,6 @@ namespace ClbPresnetacionGREENDESERT
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelMenu.Controls.Add(this.iconButton5);
             this.panelMenu.Controls.Add(this.btnEmpleado);
             this.panelMenu.Controls.Add(this.btnProveedores);
             this.panelMenu.Controls.Add(this.btnClientes);
@@ -72,25 +70,6 @@ namespace ClbPresnetacionGREENDESERT
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 532);
             this.panelMenu.TabIndex = 0;
-            // 
-            // iconButton5
-            // 
-            this.iconButton5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.ShoppingBag;
-            this.iconButton5.IconColor = System.Drawing.Color.White;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.Location = new System.Drawing.Point(0, 375);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.iconButton5.Size = new System.Drawing.Size(220, 60);
-            this.iconButton5.TabIndex = 6;
-            this.iconButton5.Text = "Products";
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton5.UseVisualStyleBackColor = true;
             // 
             // btnEmpleado
             // 
@@ -346,7 +325,6 @@ namespace ClbPresnetacionGREENDESERT
         private System.Windows.Forms.Panel panelMenu;
         private FontAwesome.Sharp.IconButton btnProducts;
         private System.Windows.Forms.Panel panellogo;
-        private FontAwesome.Sharp.IconButton iconButton5;
         private FontAwesome.Sharp.IconButton btnEmpleado;
         private FontAwesome.Sharp.IconButton btnProveedores;
         private FontAwesome.Sharp.IconButton btnClientes;
